@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #eee;
+  text-wrap: wrap;
+}
+.navbar {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  position: fixed; /* agar selalu di atas */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar .navbar-satu a {
+  color: #eee;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem;
+  font-family: "Lexend";
+}
+
+/* Jika di pencet" tombol home,dll berubah warna */
+.navbar .navbar-satu a:hover {
+  color: aqua;
+}
+.navbar .navbar-satu a::after {
+  content: "";
+  display: block;
+  height: 0.5rem;
+
+  transform: scaleX(0);
+  transition: 0.3s linear;
+}
+
+.navbar .navbar-satu a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #eee;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: aqua;
+}
+#hamburger-menu {
+  display: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  gap: 8rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.profile-img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 60%;
+}
+
+.profile-desc {
+  max-width: 35rem;
+  text-align: start;
+  font-family: "Zain";
+  color: aqua;
+  padding-top: 0.5rem;
+  background-color: #302f2f;
+  border-radius: 15%;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+}
+
+.profile-desc p {
+  color: #eee;
+  line-height: 1.5;
+  font-size: 1.7rem;
+}
+
+.about {
+  padding: 3rem 7% 1.4rem;
+  min-height: 100vh;
+}
+
+.about p {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.about h2 {
+  color: aqua;
+  padding-top: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2rem 1rem;
+  line-height: 2rem;
+}
+
+.about .ser-img {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem 0 0;
+  box-sizing: border-box;
+}
+
+.about .ser-img .desc-1 {
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+.about .ser-img .desc-1 img {
+  padding-top: 1rem;
+  border-radius: 10%;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.about .ser-img .desc-1 .deskripsi {
+  margin: 0.5rem 1rem;
+  font-size: 1.3rem;
+  flex-wrap: wrap;
+  color: #eee;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-satu {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #eee;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-satu.active {
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 50vh;
+    border-radius: 10%;
+  }
+
+  .navbar .navbar-satu a {
+    color: #eee;
+    display: block; /* Membuat elemen turun ke bawah. */
+    margin: 1.5rem; /* setara (24px)*/
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-satu a::after {
+    transform-origin: 0 0; /* Agar garis dibawah elemen teratur. */
+  }
+  .navbar .navbar-satu a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .profile {
+    flex-direction: column; /* ubah dari kiri-kanan jadi atas-bawah */
+    padding: 3rem;
+    gap: 3rem; /* jarak lebih rapat */
+    text-align: center;
+  }
+
+  .profile-desc {
+    max-width: 80%;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 480px) {
+  html {
+    font-size: 70%;
+  }
+
+  .profile {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .profile-img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .profile-desc {
+    max-width: 90%;
+  }
+}
